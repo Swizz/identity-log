@@ -1,0 +1,22 @@
+{
+  "name": "identity-log",
+  "version": "0.1.0",
+  "description": "A console.{log,info,warn,...} that return its last argument",
+  "keywords": [],
+  "author": "Swizz",
+  "license": "MIT",
+  "repository": "git@github.com/Swizz/identity-log.git",
+  "browser": "lib/identity-log.js",
+  "main": "lib/identity-log.common.js",
+  "module": "lib/identity-log.es.js",
+  "jsnext:main": "lib/identity-log.es.js",
+  "devDependencies": {
+    "bili": "^0.17.4",
+    "jest": "^20.0.4",
+    "rollup-plugin-typescript": "^0.8.1",
+    "typescript": "^2.4.2"
+  },
+  "scripts": {
+    "build": "bili src/index.ts --js typescript --out-dir lib --format cjs,umd,es"
+  }
+}
