@@ -10,4 +10,5 @@ package-lock.json
 
 # Dist
 dist/
+lib/
 coverage/
