@@ -71,8 +71,8 @@ The tap function can be used for function composition too.
 
 ```js
 tap(console.log, 1, 2, 3) // => 3
-```
-```js
+
+
 const log = tap(console.log)
 log(1, 2, 3) // => 3
 ```
