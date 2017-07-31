@@ -1,6 +1,6 @@
 {
   "name": "identity-log",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "A 400 bytes console.{log,info,warn,...} that return its last argument",
   "keywords": [
     "console.log",
