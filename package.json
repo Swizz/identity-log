@@ -14,11 +14,29 @@
     "@types/jest": "^20.0.5",
     "bili": "^0.17.4",
     "jest": "^20.0.4",
+    "nanobench": "^2.1.0",
+    "prettier": "^1.5.3",
     "rollup-plugin-typescript": "^0.8.1",
     "ts-jest": "^20.0.7",
     "typescript": "^2.4.2"
   },
   "scripts": {
-    "build": "bili src/index.ts --js typescript --out-dir lib --format cjs,umd,es"
+    "test": "jest",
+    "bench": "nanobench */*.bench.js",
+    "format": "prettier --semi false --single-quote --write 'src/**/*.ts' 'test/**/*.ts' 'bench/**/*.js'",
+    "build": "bili src/index.ts --js typescript --out-dir dist --format cjs,umd,es"
+  },
+  "jest": {
+    "transform": {
+      ".ts": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "testMatch": [
+      "**/__tests__/**/*.(ts|js)",
+      "**/?(*.)(spec|test).(ts|js)"
+    ],
+    "moduleFileExtensions": [
+      "ts",
+      "js"
+    ]
   }
 }
