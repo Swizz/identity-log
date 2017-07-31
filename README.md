@@ -46,7 +46,7 @@
   import { error, log, warn } from 'identity-log'
   ```
 
-- **3.** You can use them directly as surrounding the returned value without worrying.
+- **3.** You can use them directly by surrounding the returned value without worrying.
   ```js
   const add = (a, b) => log(a + b)
 
@@ -64,8 +64,21 @@ Identity-log aim to be less impacting as possible on the function, less bytes an
 * **trace**
 * **warn**
 
+### tap
+Identity-log also provide a `tap` function that allow you to create your own transformation from a function that return `void` to a function that return its last argument.
+
+The tap function can be used for function composition too.
+
+```js
+tap(console.log, 1, 2, 3) // => 3
+```
+```js
+const log = tap(console.log)
+log(1, 2, 3) // => 3
+```
+
 
 ## Misc
 
-- Identity follows the [Compatible Versioning: major.minor only](https://github.com/staltz/comver) convention.
+- Identity-log follows the [Compatible Versioning: major.minor only](https://github.com/staltz/comver) convention.
 - [Release notes](https://github.com/Swizz/snabbdom-pragma/releases) are [Keep a Changelog](http://keepachangelog.com/en/0.3.0/) compliants.
