@@ -1,0 +1,12 @@
+# IDE
+.vscode/
+
+# Logs
+*.log*
+
+# NPM
+node_modules/
+package-lock.json
+
+# Dist
+coverage/

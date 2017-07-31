@@ -1,0 +1,24 @@
+language: node_js
+node_js:
+  - 6
+
+cache:
+  yarn: true
+
+script:
+  - yarn run test
+  - yarn run build
+  - yarn run size
+  - yarn run bench
+
+deploy:
+  provider: npm
+  email:
+    secure:
+  api_key:
+    secure:
+  skip_cleanup: true
+  on:
+    repo: Swizz/identity-log
+    branch: master
+    tags: true
