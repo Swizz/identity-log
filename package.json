@@ -1,8 +1,14 @@
 {
   "name": "identity-log",
   "version": "0.1.0",
-  "description": "A console.{log,info,warn,...} that return its last argument",
-  "keywords": [],
+  "description": "A 400 bytes console.{log,info,warn,...} that return its last argument",
+  "keywords": [
+    "console.log",
+    "log",
+    "tap",
+    "identity",
+    "return"
+  ],
   "author": "Swizz",
   "license": "MIT",
   "repository": "git@github.com/Swizz/identity-log.git",
@@ -13,6 +19,7 @@
   "devDependencies": {
     "@types/jest": "^20.0.5",
     "bili": "^0.17.4",
+    "bundlesize": "^0.13.2",
     "jest": "^20.0.4",
     "nanobench": "^2.1.0",
     "prettier": "^1.5.3",
@@ -21,10 +28,11 @@
     "typescript": "^2.4.2"
   },
   "scripts": {
-    "test": "jest",
+    "test": "jest --coverage",
+    "size": "bundlesize",
     "bench": "nanobench */*.bench.js",
     "format": "prettier --semi false --single-quote --write 'src/**/*.ts' 'test/**/*.ts' 'bench/**/*.js'",
-    "build": "bili src/index.ts --js typescript --out-dir dist --format cjs,umd,es"
+    "build": "bili"
   },
   "jest": {
     "transform": {
@@ -38,5 +46,17 @@
       "ts",
       "js"
     ]
+  },
+  "bundlesize": [
+    {
+      "path": "./dist/identity-log.min.js",
+      "maxSize": "400b"
+    }
+  ],
+  "bili": {
+    "entry": "src/index.ts",
+    "js": "typescript",
+    "format": ["cjs", "umd", "es"],
+    "compress": "umd"
   }
 }
